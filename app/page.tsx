@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import FileUpload from "./components/FileUpload";
 
 export default function HomePage() {
@@ -12,7 +13,7 @@ export default function HomePage() {
       {uploadedUrl && (
         <div>
           <p>Yuklangan fayl URL: {uploadedUrl}</p>
-          <img src={uploadedUrl} alt="Profil rasm" width={200} />
+          <Image src={uploadedUrl} alt="Profil rasm" width={200} />
         </div>
       )}
     </main>
