@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <main>
       <h1>Profil Rasm Yuklash</h1>
-      <FileUpload onUpload={(url: any) => setUploadedUrl(url)} />
+      <FileUpload onUpload={(url: string) => setUploadedUrl(url)} />
       {uploadedUrl && (
         <div>
           <p>Yuklangan fayl URL: {uploadedUrl}</p>

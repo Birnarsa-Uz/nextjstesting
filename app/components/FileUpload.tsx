@@ -1,11 +1,13 @@
 "use client";
-import { useState } from "react";
+import { ReactEventHandler, useState } from "react";
 
-export default function FileUpload({ onUpload }: any) {
-  const [file, setFile] = useState(null);
+export default function FileUpload({ onUpload }: { onUpload: (url: string) => void }) {
+  const [file, setFile] = useState<File | null>(null);
 
-  const handleFileChange = (e: any) => {
-    setFile(e.target.files[0]);
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setFile(e.target.files[0]);
+    }
   };
 
   const handleUpload = async () => {
